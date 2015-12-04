@@ -1,0 +1,20 @@
+///////////
+            using (StreamReader sr1 = new StreamReader(@"C:/mappa/valami.txt"))
+            {
+                string tmp;
+                int index, hossz;
+                tmp = sr1.ReadLine();
+                index = tmp.IndexOf(" ") + 1;
+                hossz = tmp.Length - tmp.IndexOf(" ") - 1;
+                valamidoboz.Text = tmp.Substring(index, hossz);
+            }
+//////////
+Szükséges lehet:
+
+using System.IO;
+//////////
+Leírás és magyarázat:
+
+Ha ezt hozzárendeljük egy gomb click actionjéhez akkor az fog történni, hogy a WindowsForm ablakunkban elhelyezett gomb
+a megnyomáskor beolvassa az adott fájlt ami az első sorban meghatározásra került. Beolvassa annak első sorát. 
+De úgy, hogy az első szóköz utáni szövegrészt írja csak ki az adott szövegdobozba ez hasznos lehet akkor ha a sorok tartalmaznak például sorszámokat méghozzá így 1.) Kérdésem szövege?  Így a kiírásra csak a Kérdésem szövege? rész fog kerülni...A szövegdoboz neve itt a valamidoboz.Text ugye a doboz neve és a tartalmának típusa ugye Text tehát szöveg. Ez tovább bonyolítható akár adott karakterek/szavak kihagyására is stb.
